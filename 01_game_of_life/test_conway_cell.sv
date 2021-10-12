@@ -5,6 +5,22 @@
 
 module test_conway_cell;
 
+  // logic [7:0] neighbors;
+  // wire [3:0] living_neighbors;
+
+  // neighbor_adder UUT(neighbors, living_neighbors);
+
+  // initial begin
+    
+  //   $display("neighbors | living_neighbors");
+  //   for (int i = 0; i < 16; i = i + 1) begin
+  //     neighbors = i[7:0];
+  //     #1 $display("%8b | %4b", neighbors, living_neighbors);
+  //   end
+        
+  //   $finish;      
+	// end
+
   logic clk, rst, ena, state_0;
   logic [7:0] neighbors;
   wire state_d, state_q;

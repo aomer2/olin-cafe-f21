@@ -8,6 +8,7 @@ VIVADO=vivado -mode batch -source
 .PHONY: clean submission remove_solutions
 
 DECODERS=decoder_1_to_2.sv decoder_2_to_4.sv decoder_3_to_8.sv
+ADDERS=adder_1.sv adder_n.sv neighbor_adder.sv
 
 test_decoders: test_decoders.sv $(DECODERS)
 	${IVERILOG} $^ -o test_decoders.bin && ${VVP} test_decoders.bin
@@ -15,10 +16,10 @@ test_decoders: test_decoders.sv $(DECODERS)
 test_led_array_driver: test_led_array_driver.sv led_array_driver.sv led_array_model.sv $(DECODERS)
 	${IVERILOG} $^ -o test_led_array_driver.bin && ${VVP} test_led_array_driver.bin
 
-test_conway_cell: test_conway_cell.sv conway_cell.sv
+test_conway_cell: test_conway_cell.sv conway_cell.sv $(ADDERS)
 	${IVERILOG} $^ -o test_conway_cell.bin &&	${VVP} test_conway_cell.bin
 
-test_main: test_main.sv main.sv conway_cell.sv initial_conditions.sv led_array_driver.sv led_array_model.sv $(DECODERS)
+test_main: test_main.sv main.sv conway_cell.sv initial_conditions.sv led_array_driver.sv led_array_model.sv $(DECODERS) $(ADDERS)
 	${IVERILOG} $^ -o test_main.bin && ${VVP} test_main.bin
 
 main.bit: main.sv conway_cell.sv led_array_driver.sv $(DECODERS)
@@ -39,4 +40,4 @@ clean:
 
 # Call this to generate your submission zip file.
 submission:
-	zip submission.zip *.sv README.md docs/* xilinx/*.xpr *.xdc
+	zip submission.zip Makefile *.sv README.md docs/* xilinx/*.xpr *.xdc

@@ -1,0 +1,112 @@
+
+*** Running vivado
+    with args -log main.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source main.tcl -notrace
+Command: link_design -top main -part xc7a15tcpg236-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a15tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2468.934 ; gain = 0.000 ; free physical = 7977 ; free virtual = 12851
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/aomer/workspace/olin-cafe-f21/01_game_of_life/01_game_of_life.xdc]
+Finished Parsing XDC File [/home/aomer/workspace/olin-cafe-f21/01_game_of_life/01_game_of_life.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+CRITICAL WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'conway_cell' instantiated as 'cells_x[1].cells_y[1].CELL'. 64 instances of this cell are unresolved black boxes. [/home/aomer/workspace/olin-cafe-f21/01_game_of_life/main.sv:170]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2524.875 ; gain = 0.000 ; free physical = 7874 ; free virtual = 12746
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a15t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a15t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[1].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[2].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[3].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[4].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[5].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[6].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[7].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[1].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[2].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[3].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[4].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[5].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[6].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[7].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'cells_x[8].cells_y[8].CELL' of type 'conway_cell' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+INFO: [Project 1-461] DRC finished with 64 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:00.98 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2588.906 ; gain = 64.031 ; free physical = 7863 ; free virtual = 12735
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 1 Critical Warnings and 65 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 29 17:21:52 2021...
