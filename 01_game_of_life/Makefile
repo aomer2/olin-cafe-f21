@@ -22,7 +22,7 @@ test_conway_cell: test_conway_cell.sv conway_cell.sv $(ADDERS)
 test_main: test_main.sv main.sv conway_cell.sv initial_conditions.sv led_array_driver.sv led_array_model.sv $(DECODERS) $(ADDERS)
 	${IVERILOG} $^ -o test_main.bin && ${VVP} test_main.bin
 
-main.bit: main.sv conway_cell.sv led_array_driver.sv $(DECODERS)
+main.bit: main.sv conway_cell.sv led_array_driver.sv $(DECODERS) $(ADDERS)
 	@echo "########################################"
 	@echo "#### Building FPGA bitstream        ####"
 	@echo "########################################"
@@ -33,6 +33,12 @@ program_fpga: main.bit
 	@echo "#### Programming FPGA               ####"
 	@echo "########################################"
 	${VIVADO} program.tcl
+
+program_fpga_cool: main.bit
+	@echo "########################################"
+	@echo "#### Programming FPGA               ####"
+	@echo "########################################"
+	djtgcfg prog -d CmodA7 -i 0 -f main.bit
 
 # Call this to clean up all your generated files
 clean:

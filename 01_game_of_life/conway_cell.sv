@@ -1,3 +1,6 @@
+`include "neighbor_adder.sv"
+`include "adder_n.sv"
+`include "adder_1.sv"
 `default_nettype none
 
 module conway_cell(clk, rst, ena, state_0, state_d, state_q, neighbors);
