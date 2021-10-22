@@ -15,3 +15,11 @@ test_add32: test_add32.sv $(ADDERS)
 
 test_mux32: test_mux32.sv $(MUXES)
 	${IVERILOG} $^ -o test_mux32.bin && ${VVP} test_mux32.bin
+
+# Call this to clean up all your generated files
+clean:
+	rm -f *.bin *.vcd vivado*.log vivado*.jou vivado*.str
+
+# Call this to generate your submission zip file.
+submission:
+	zip submission.zip Makefile *.sv README.md docs/* xilinx/*.xpr *.xdc

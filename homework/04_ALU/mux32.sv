@@ -2,13 +2,15 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
              d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31,
              s, y);
 
-    input logic d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, 
-                d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31;
-    input logic [4:0] s;
-    output logic y;
-    wire a, b, c, d, e, f, g, h, i, j;
+    parameter N =4 ;
 
-    mux4 mux4_A(
+    input logic [N-1:0] d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, 
+                        d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31;
+    input logic [4:0] s;
+    output logic [N-1:0] y;
+    wire [N-1:0] a, b, c, d, e, f, g, h, i, j;
+
+    mux4 #(.N(N)) mux4_A(
         .d0(d00),
         .d1(d01),
         .d2(d02),
@@ -17,7 +19,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(a)
     );
 
-    mux4 mux4_B(
+    mux4 #(.N(N)) mux4_B(
         .d0(d04),
         .d1(d05),
         .d2(d06),
@@ -26,7 +28,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(b)
     );
 
-    mux4 mux4_C(
+    mux4 #(.N(N)) mux4_C(
         .d0(d08),
         .d1(d09),
         .d2(d10),
@@ -35,7 +37,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(c)
     );
 
-    mux4 mux4_D(
+    mux4 #(.N(N)) mux4_D(
         .d0(d12),
         .d1(d13),
         .d2(d14),
@@ -44,7 +46,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(d)
     );
 
-    mux4 mux4_E(
+    mux4 #(.N(N)) mux4_E(
         .d0(d16),
         .d1(d17),
         .d2(d18),
@@ -53,7 +55,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(e)
     );
 
-    mux4 mux4_F(
+    mux4 #(.N(N)) mux4_F(
         .d0(d20),
         .d1(d21),
         .d2(d22),
@@ -62,7 +64,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(f)
     );
 
-    mux4 mux4_G(
+    mux4 #(.N(N)) mux4_G(
         .d0(d24),
         .d1(d25),
         .d2(d26),
@@ -71,7 +73,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(g)
     );
 
-    mux4 mux4_H(
+    mux4 #(.N(N)) mux4_H(
         .d0(d28),
         .d1(d29),
         .d2(d30),
@@ -80,7 +82,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(h)
     );
 
-    mux4 mux4_I(
+    mux4 #(.N(N)) mux4_I(
         .d0(a),
         .d1(b),
         .d2(c),
@@ -89,7 +91,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(i)
     );
 
-    mux4 mux4_J(
+    mux4 #(.N(N)) mux4_J(
         .d0(e),
         .d1(f),
         .d2(g),
@@ -98,7 +100,7 @@ module mux32(d00, d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d1
         .y(j)
     );
 
-    mux2 mux2_A(
+    mux2 #(.N(N)) mux2_A(
         .d0(i),
         .d1(j),
         .s(s[4]),
