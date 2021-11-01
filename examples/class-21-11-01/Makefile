@@ -4,7 +4,6 @@ IVERILOG=iverilog -Wall -g2012 -y ./ -I ./
 VVP=vvp
 VIVADO=vivado -mode batch -source
 
-
 # Look up .PHONY rules for Makefiles
 .PHONY: clean
 
@@ -21,7 +20,7 @@ test_edge_detectors : test_edge_detectors.sv edge_detector.sv edge_detector_moor
 	${IVERILOG} $^ -o test_edge_detectors.bin && ${VVP} test_edge_detectors.bin
 
 
-main.bit: light_seq.sv $(SRCS)
+main.bit: debouncer.sv edge_detector.sv edge_detector_moore.sv light_sequencer.sv
 	@echo "########################################"
 	@echo "#### Building FPGA bitstream        ####"
 	@echo "########################################"
