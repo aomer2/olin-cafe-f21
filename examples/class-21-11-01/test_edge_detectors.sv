@@ -17,7 +17,7 @@ initial begin
   $dumpvars(0, UUT_MOORE);
 
   for(int i = 0; i < 10; i = i + 1) begin
-    delay = $random;
+    delay = $random + 1;
     repeat (delay) @(negedge clk);
     in = ~in; // toggle input
   end
@@ -28,4 +28,4 @@ end
 
 always #5 clk = ~clk; // clock signal
 
-endmodule;
+endmodule
